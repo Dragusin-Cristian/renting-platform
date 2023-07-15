@@ -1,0 +1,21 @@
+<%- include('../includes/head.ejs') %>
+
+  <body>
+    <%- include('../includes/navbar.ejs') %>
+      <main>
+        <h2>Edit account details</h2>
+        <form action="/auth/edit-account-details" method="post">
+          <div>
+            <label for="name">Name</label>
+            <input type="text" name="name" required value="<%= name %>">
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" required value="<%= email %>">
+          </div>
+          <div>
+            <button>Update account</button>
+          </div>
+        </form>
+        <%- include('../includes/error.ejs') %>
+      </main>

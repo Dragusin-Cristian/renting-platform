@@ -1,0 +1,16 @@
+<%- include('../includes/head.ejs') %>
+
+  <body>
+    <%- include('../includes/navbar.ejs') %>
+      <main>
+        <% if(successMessage){ %>
+          <h2>
+            <%= successMessage %>
+          </h2>
+          <% } if(errorMessage) { %>
+            <h2>
+              <%= errorMessage %>
+            </h2>
+            <% } %>
+              <a href="<%= host %>/auth/login">Log in</a>
+      </main>

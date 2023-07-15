@@ -1,0 +1,21 @@
+<%- include('../includes/head.ejs') %>
+
+  <body>
+    <%- include('../includes/navbar.ejs') %>
+      <main>
+        <h2>
+          <%= username %>'s account
+        </h2>
+        <p>
+          <%= email %>
+        </p>
+        <a href="/auth/edit-account-details">Edit account details</a>
+        <form action="/auth/email-reset-pass" method="post">
+          <button>
+            Change password
+          </button>
+        </form>
+        <a href="/auth/delete-account">Delete account</a>
+        <%- include('../includes/error.ejs') %>
+          <%- include('../includes/success.ejs') %>
+      </main>
