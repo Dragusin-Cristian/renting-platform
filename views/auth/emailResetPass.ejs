@@ -1,0 +1,17 @@
+<%- include('../includes/head.ejs') %>
+
+  <body>
+    <%- include('../includes/navbar.ejs') %>
+      <main>
+        <h2>Change password</h2>
+        <form action="/auth/email-reset-pass" method="post">
+          <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" required>
+          </div>
+          <div>
+            <button>Get email for password changing</button>
+          </div>
+        </form>
+        <%- include('../includes/error.ejs') %>
+      </main>

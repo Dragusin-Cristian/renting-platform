@@ -1,0 +1,30 @@
+<%- include('../includes/head.ejs') %>
+
+  <body>
+    <%- include('../includes/navbar.ejs') %>
+      <main>
+        <h2>Log in</h2>
+        <form action="/auth/signup" method="post">
+          <div>
+            <label for="name">Name</label>
+            <input type="text" name="name" required>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" required>
+          </div>
+          <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" required>
+          </div>
+          <div>
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" name="confirmPassword" required>
+          </div>
+          <div>
+            <button>Sign up</button>
+            <a href="<%= host %>/auth/login">Log in</a>
+          </div>
+        </form>
+        <%- include('../includes/error.ejs') %>
+      </main>

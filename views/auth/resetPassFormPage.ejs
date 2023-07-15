@@ -1,0 +1,22 @@
+<%- include('../includes/head.ejs') %>
+
+  <body>
+    <%- include('../includes/navbar.ejs') %>
+      <main>
+        <h2>Change your password</h2>
+        <form action="/auth/reset-pass" method="post">
+          <div>
+            <label for="password">New password</label>
+            <input type="password" name="password" required>
+          </div>
+          <div>
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" name="confirmPassword" required>
+          </div>
+          <input type="hidden" name="uuid" value="<%= uuid %>">
+          <div>
+            <button>Change password</button>
+          </div>
+        </form>
+        <%- include('../includes/error.ejs') %>
+      </main>

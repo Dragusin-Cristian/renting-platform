@@ -1,0 +1,12 @@
+<%- include('../includes/head.ejs') %>
+
+  <body>
+    <%- include('../includes/navbar.ejs') %>
+      <main>
+        <% if(!errorMessage) { %>
+          <h2>An email was sent to your address. You may consider checking your spam too.</h2>
+          <% } else{ %>
+            <h2>Email could not be sent.</h2>
+            <% } %>
+              <%- include('../includes/error.ejs') %>
+      </main>
