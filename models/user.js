@@ -15,7 +15,8 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
-  passwordChangeUuid: String
+  passwordChangeUuid: String,
+  emailActivationUuid: String
   // rents: {
   //   items: [
   //     {
