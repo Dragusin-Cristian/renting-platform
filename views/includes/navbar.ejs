@@ -1,27 +1,25 @@
-<div>
-  <div>
-    <p>Svg logo here</p>
+<div id="navBarContainer">
+  <div id="leftHalf">
+    <a id="navBarLogo" href="#top"><img src="/assets/logo.svg" alt="logo"></a>
   </div>
-  <div>
-    <ul>
-      <li>
-        <p>Book</p>
-      </li>
-      <li>
-        <p>Contact</p>
+  <img id="burger" src="/assets/burger.svg" alt="burger">
+  <div id="rightHalf" class="drawerHide">
+    <ul id="navBarList">
+      <li class="navOption">
+        <a href="/">Home</a>
       </li>
       <% if(isAuthenticated) { %>
-        <li>
+        <li class="navOption">
           <a href="/auth/account">Account</a>
         </li>
-        <li>
+        <li class="navOption">
           <form action="/auth/logout" method="post">
-            <button>Logout</button>
+            <button class="roundedCornersAction loginAction">Logout</button>
           </form>
         </li>
         <% } else { %>
-          <li>
-            <a href="/auth/login">Log in</a>
+          <li class="navOption">
+            <a href="/auth/login" class="roundedCornersAction loginAction">Log in</a>
           </li>
           <% } %>
     </ul>

@@ -12,3 +12,6 @@ if (process.env.PORT) {
 exports.MONGODB_URI =
   `mongodb+srv://${process.env.DATABASE_USERNAME}:${process.env.DATABASE_PASSWORD}@cluster0.rxv84.mongodb.net/sports-booking?retryWrites=true&w=majority`
 exports.SESSIONS_COLLECTION = "sessions"
+
+exports.errorFlash = "error"
+exports.successFlash = "success"

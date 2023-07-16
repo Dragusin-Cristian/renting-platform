@@ -1,7 +1,90 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body{
+  margin: 0;
+}
+
+* {
+  font-family: 'Lato', sans-serif;
+  color: black;
+}
+
+*:focus{
+  outline: 2px solid #EA3C12;
+  border-width: 0;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+#top{
+  display: hidden;
+}
+
+a{
+  text-decoration: none;
+  cursor: pointer;
+}
+a:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button:hover{
+  text-decoration: underline;
+}
+
+.roundedCornersAction {
+  border-radius: 50px;
+  padding: 10px 30px;
+  border: none;
+  color: white;
+}
+
+.liftUpOnHover{
+  transition: transform 0.3s;
+}
+
+.liftUpOnHover:hover{
+  transform: translateY(-10px);
+}
+
+
 .error{
   color: red;
 }
 
 .success{
   color: green;
+}
+
+main {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
 }
