@@ -1,10 +1,30 @@
 <%- include('../includes/head.ejs') %>
+  <link rel="stylesheet" href="/css/home/styles.css">
+  <link rel="stylesheet" href="/css/home/images.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="/scripts/home/images.js"></script>
 
   <body>
     <a id="top"></a>
     <%- include('../includes/navbar.ejs') %>
       <main>
-        <h1>Home page</h1>
+        <section>
+          <div class="sectionLeftHalf">
+            <h1 class="heroHeading">Sports center booking platform</h1>
+            <p class="heroParagraph">Find, book, and excel at your favorite sports with our hassle-free sports center
+              renting platform. It’s
+              easy to use, forget about excuses and problems, focus on solutions and take action! </p>
+            <div class="buttonsContainer">
+              <a class="roundedCornersAction">Check our schedule</a>
+              <% if(!isAuthenticated) { %>
+                <a href="/auth/login" class="roundedCornersAction loginAction marginLeft">Log in</a>
+                <% } %>
+            </div>
+          </div>
+          <div>
+            <%- include('./images.ejs') %>
+          </div>
+        </section>
 
         <%- include('../includes/error.ejs') %>
       </main>

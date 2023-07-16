@@ -1,22 +1,17 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <title>Page not found</title>
-  <link rel="stylesheet" href="/css/404.css">
-</head>
+<%- include('./includes/head.ejs') %>
+  <link rel="stylesheet" href="/css/404/404.css">
+  </head>
 
-<body>
-  <div class="container">
-    <h1>Page not found</h1>
-    <p>The page you try to reach doesn't exist.
-    </p>
-    <p>You can reach us via:</p>
-    <ul>
-      <li>Email: <a href="mailto:dragusincristian609@gmail.com">dragusincristian609@gmail.com</a></li>
-      <li>Phone: <a href="tel:+40773312648">+40773312648</a></li>
-    </ul>
-  </div>
-</body>
+  <body>
+    <%- include('./includes/navbar.ejs') %>
+      <div class="container">
+        <h1>Page not found</h1>
+        <p>The page you try to reach doesn't exist.
+        </p>
+      </div>
+  </body>
 
 </html>

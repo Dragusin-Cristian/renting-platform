@@ -1,12 +1,13 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
-  box-sizing: inherit;
-}
 
 html, body{
   margin: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 * {
@@ -19,8 +20,27 @@ html, body{
   border-width: 0;
 }
 
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
+  width: 100%;
+}
+
+main {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
+
 h1 {
   font-size: 4rem;
+  max-width: 500px;
 }
 
 h2 {
@@ -60,8 +80,7 @@ button:hover{
 .roundedCornersAction {
   border-radius: 50px;
   padding: 10px 30px;
-  border: none;
-  color: white;
+  border: 1px solid black;
 }
 
 .liftUpOnHover{
@@ -79,12 +98,4 @@ button:hover{
 
 .success{
   color: green;
-}
-
-main {
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: auto;
 }

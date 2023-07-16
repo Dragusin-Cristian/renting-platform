@@ -12,3 +12,8 @@ div#accountActions{
 #deleteAccount {
   color: red;
 }
+
+#accountPageContainer{
+  margin-left: 20px;
+  margin-right: 20px;
+}

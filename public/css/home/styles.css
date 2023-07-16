@@ -1,0 +1,44 @@
+.sectionLeftHalf{
+  text-align: left;
+}
+
+.heroHeading {
+  margin: 0
+}
+
+.heroParagraph {
+  max-width: 400px;
+}
+
+.buttonsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 400px;
+  margin-right: 0px;
+}
+
+.marginLeft {
+  margin-left: 20px;
+}
+
+@media(max-width: 1279px){
+  .sectionLeftHalf{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 322px){
+  .buttonsContainer{
+    justify-content: space-around;
+  }
+
+  .marginLeft {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
