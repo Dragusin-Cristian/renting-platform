@@ -3,21 +3,23 @@
   <body>
     <%- include('../includes/navbar.ejs') %>
       <main>
-        <h2>Log in</h2>
-        <form action="/auth/login" method="post">
-          <div>
-            <label for="email">Email</label>
-            <input type="email" name="email" required>
-          </div>
-          <div>
-            <label for="password">Password</label>
-            <input type="password" name="password" required>
-          </div>
-          <div>
-            <button>Log in</button>
-            <a href="<%= host %>/auth/signup">Sign up</a>
-            <a href="<%= host %>/auth/email-reset-pass">Change Password</a>
-          </div>
-        </form>
+        <div class="formContainer">
+          <h2>Log in</h2>
+          <form action="/auth/login" method="post">
+            <div class="inputContainer">
+              <label for="email">Email</label>
+              <input type="email" name="email" required>
+            </div>
+            <div class="inputContainer">
+              <label for="password">Password</label>
+              <input type="password" name="password" required>
+            </div>
+            <div class="actionsContainerSpaceBetween">
+              <button class="roundedCornersAction loginAction liftUpOnHover">Log in</button>
+              <a href="<%= host %>/auth/signup">Sign up</a>
+              <a href="<%= host %>/auth/email-reset-pass">Change Password</a>
+            </div>
+          </form>
+        </div>
         <%- include('../includes/error.ejs') %>
       </main>

@@ -1,0 +1,44 @@
+div.formContainer{
+  margin: auto;
+  width: 90%;
+  max-width: 500px;
+}
+
+div.formContainer h2 {
+  text-align: center;
+  width: 100%;
+}
+
+div.formContainer div.inputContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+div.formContainer div.inputContainer input {
+  border: 1px solid grey;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  padding: 10px 20px;
+  text-align: left;
+  margin-top: 10px;
+  display: block;
+}
+
+div.formContainer div.actionsContainerSpaceBetween {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+div.formContainer div.actionsContainerSpaceEvenly {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
