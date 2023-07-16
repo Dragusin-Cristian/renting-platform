@@ -3,13 +3,15 @@
   <body>
     <%- include('../includes/navbar.ejs') %>
       <main>
-        <% if(successMessage) { %>
-          <h2>
-            <%= successMessage %>
-          </h2>
-          <% } if (errorMessage){ %>
+        <div class="marginTopAfterNavBar">
+          <% if(successMessage) { %>
             <h2>
-              <%= errorMessage %>
+              <%= successMessage %>
             </h2>
-            <% } %>
+            <% } if (errorMessage){ %>
+              <h2>
+                <%= errorMessage %>
+              </h2>
+              <% } %>
+        </div>
       </main>

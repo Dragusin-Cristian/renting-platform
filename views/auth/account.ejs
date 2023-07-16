@@ -4,21 +4,23 @@
   <body>
     <%- include('../includes/navbar.ejs') %>
       <main>
-        <div id="accountPageContainer">
-          <h2>
-            <%= username %>'s account
-          </h2>
-          <p>
-            <%= email %>
-          </p>
-          <div id="accountActions">
-            <a href="/auth/edit-account-details" class="accountAction">Edit account details</a>
-            <form action="/auth/email-reset-pass" method="post">
-              <button class="accountAction">
-                Change password
-              </button>
-            </form>
-            <a href="/auth/delete-account" class="accountAction" id="deleteAccount">Delete account</a>
+        <div class="marginTopAfterNavBar">
+          <div id="accountPageContainer">
+            <h2>
+              <%= username %>'s account
+            </h2>
+            <p>
+              <%= email %>
+            </p>
+            <div id="accountActions">
+              <a href="/auth/edit-account-details" class="accountAction">Edit account details</a>
+              <form action="/auth/email-reset-pass" method="post">
+                <button class="accountAction">
+                  Change password
+                </button>
+              </form>
+              <a href="/auth/delete-account" class="accountAction" id="deleteAccount">Delete account</a>
+            </div>
           </div>
         </div>
         <%- include('../includes/error.ejs') %>

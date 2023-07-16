@@ -4,8 +4,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
+  position: fixed;
+  z-index: 999;
   box-shadow: 0px 6px 6px 0px #00000040;
+  background-color: white;
 }
 
 #leftHalf{

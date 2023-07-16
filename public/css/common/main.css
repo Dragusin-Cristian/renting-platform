@@ -25,7 +25,7 @@ section {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 80px;
   width: 100%;
 }
 
@@ -36,6 +36,10 @@ main {
   flex-direction: column;
   justify-content: center;
   margin: auto;
+}
+
+div.marginTopAfterNavBar{
+  margin-top: 50px;
 }
 
 h1 {

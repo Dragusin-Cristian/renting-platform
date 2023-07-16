@@ -3,22 +3,24 @@
   <body>
     <%- include('../includes/navbar.ejs') %>
       <main>
-        <div class="formContainer">
-          <h2>Change your password</h2>
-          <form action="/auth/reset-pass" method="post">
-            <div class="inputContainer">
-              <label for="password">New password</label>
-              <input type="password" name="password" required>
-            </div>
-            <div class="inputContainer">
-              <label for="confirmPassword">Confirm Password</label>
-              <input type="password" name="confirmPassword" required>
-            </div>
-            <input type="hidden" name="uuid" value="<%= uuid %>">
-            <div class="actionsContainerSpaceEvenly">
-              <button class="roundedCornersAction loginAction liftUpOnHover">Change password</button>
-            </div>
-          </form>
+        <div class="marginTopAfterNavBar">
+          <div class="formContainer">
+            <h2>Change your password</h2>
+            <form action="/auth/reset-pass" method="post">
+              <div class="inputContainer">
+                <label for="password">New password</label>
+                <input type="password" name="password" required>
+              </div>
+              <div class="inputContainer">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" name="confirmPassword" required>
+              </div>
+              <input type="hidden" name="uuid" value="<%= uuid %>">
+              <div class="actionsContainerSpaceEvenly">
+                <button class="roundedCornersAction loginAction liftUpOnHover">Change password</button>
+              </div>
+            </form>
+          </div>
         </div>
         <%- include('../includes/error.ejs') %>
       </main>

@@ -8,23 +8,26 @@
     <a id="top"></a>
     <%- include('../includes/navbar.ejs') %>
       <main>
-        <section>
-          <div class="sectionLeftHalf">
-            <h1 class="heroHeading">Sports center booking platform</h1>
-            <p class="heroParagraph">Find, book, and excel at your favorite sports with our hassle-free sports center
-              renting platform. It’s
-              easy to use, forget about excuses and problems, focus on solutions and take action! </p>
-            <div class="buttonsContainer">
-              <a class="roundedCornersAction">Check our schedule</a>
-              <% if(!isAuthenticated) { %>
-                <a href="/auth/login" class="roundedCornersAction loginAction marginLeft">Log in</a>
-                <% } %>
+        <div class="marginTopAfterNavBar">
+          <section>
+            <div class="sectionLeftHalf">
+              <h1 class="heroHeading">Sports center booking platform</h1>
+              <p class="heroParagraph">Find, book, and excel at your favorite sports with our hassle-free sports center
+                renting platform. It’s
+                easy to use, forget about excuses and problems, focus on solutions and take action! </p>
+              <div class="buttonsContainer">
+                <a class="roundedCornersAction">Check our schedule</a>
+                <% if(!isAuthenticated) { %>
+                  <a href="/auth/login" class="roundedCornersAction loginAction marginLeft">Log in</a>
+                  <% } %>
+              </div>
             </div>
-          </div>
-          <div>
-            <%- include('./images.ejs') %>
-          </div>
-        </section>
+            <div>
+              <%- include('./images.ejs') %>
+            </div>
+          </section>
+
+        </div>
 
         <%- include('../includes/error.ejs') %>
       </main>

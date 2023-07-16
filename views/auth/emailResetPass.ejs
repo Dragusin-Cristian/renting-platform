@@ -3,17 +3,19 @@
   <body>
     <%- include('../includes/navbar.ejs') %>
       <main>
-        <div class="formContainer">
-          <h2>Change password</h2>
-          <form action="/auth/email-reset-pass" method="post">
-            <div class="inputContainer">
-              <label for="email">Email</label>
-              <input type="email" name="email" required>
-            </div>
-            <div class="actionsContainerSpaceEvenly">
-              <button class="roundedCornersAction loginAction liftUpOnHover">Get email for password changing</button>
-            </div>
-          </form>
+        <div class="marginTopAfterNavBar">
+          <div class="formContainer">
+            <h2>Change password</h2>
+            <form action="/auth/email-reset-pass" method="post">
+              <div class="inputContainer">
+                <label for="email">Email</label>
+                <input type="email" name="email" required>
+              </div>
+              <div class="actionsContainerSpaceEvenly">
+                <button class="roundedCornersAction loginAction liftUpOnHover">Get email for password changing</button>
+              </div>
+            </form>
+          </div>
         </div>
         <%- include('../includes/error.ejs') %>
       </main>

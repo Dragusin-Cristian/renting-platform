@@ -3,31 +3,31 @@
   <body>
     <%- include('../includes/navbar.ejs') %>
       <main>
-        <div class="formContainer">
-          <h2>Sign up</h2>
-          <form action="/auth/signup" method="post">
-            <div class="inputContainer">
-              <label for="name">Name</label>
-              <input type="text" name="name" required>
-            </div>
-            <div class="inputContainer">
-              <label for="email">Email</label>
-              <input type="email" name="email" required>
-            </div>
-            <div class="inputContainer">
-              <label for="password">Password</label>
-              <input type="password" name="password" required>
-            </div>
-            <div class="inputContainer">
-              <label for="confirmPassword">Confirm Password</label>
-              <input type="password" name="confirmPassword" required>
-            </div>
-            <div class="actionsContainerSpaceEvenly">
-              <button class="roundedCornersAction loginAction liftUpOnHover">Sign up</button>
-              <a href="<%= host %>/auth/login">Log in</a>
-            </div>
-          </form>
+        <div class="marginTopAfterNavBar">
+          <div class="formContainer">
+            <h2>Sign up</h2>
+            <form action="/auth/signup" method="post">
+              <div class="inputContainer">
+                <label for="name">Name</label>
+                <input type="text" name="name" required>
+              </div>
+              <div class="inputContainer">
+                <label for="email">Email</label>
+                <input type="email" name="email" required>
+              </div>
+              <div class="inputContainer">
+                <label for="password">Password</label>
+                <input type="password" name="password" required>
+              </div>
+              <div class="inputContainer">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" name="confirmPassword" required>
+              </div>
+              <div class="actionsContainerSpaceEvenly">
+                <button class="roundedCornersAction loginAction liftUpOnHover">Sign up</button>
+                <a href="<%= host %>/auth/login">Log in</a>
+              </div>
+            </form>
+          </div>
       </main>
-      </div>
       <%- include('../includes/error.ejs') %>
-        </main>
