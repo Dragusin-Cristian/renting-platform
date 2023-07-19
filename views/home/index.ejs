@@ -1,6 +1,7 @@
 <%- include('../includes/head.ejs') %>
   <link rel="stylesheet" href="/css/home/styles.css">
   <link rel="stylesheet" href="/css/home/images.css">
+  <link rel="stylesheet" href="/css/home/rentLine.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="/scripts/home/images.js"></script>
 
@@ -10,7 +11,7 @@
       <main>
         <div class="marginTopAfterNavBar">
           <section>
-            <div class="sectionLeftHalf">
+            <div id="heroLeftHalf">
               <h1 class="heroHeading">Sports center booking platform</h1>
               <p class="heroParagraph">Find, book, and excel at your favorite sports with our hassle-free sports center
                 renting platform. It’s
@@ -27,7 +28,79 @@
             </div>
           </section>
 
+          <section id="bookingSection">
+            <div class="sectionLeftHalf">
+              <h2>Booking program</h2>
+              <div class="inputContainer">
+                <label for="date">On date</label>
+                <input type="date" name="date" id="dateProgram" required>
+              </div>
+              <p><span class="color" id="red"></span> UNAVAILABLE</p>
+              <p><span class="color" id="green"></span> AVAILABLE</p>
+              <p><span class="color" id="blue"></span> BOOKED BY YOU</p>
+            </div>
+            <div class="tallContainer"><%- include('./rentLines.ejs') %></div>
+          </section>
+
+          <section>
+            <div class="sectionLeftHalf">
+              <h2>Book a court</h2>
+              <form id="bookingForm">
+                <div class="inputContainer">
+                  <label for="date">On date</label>
+                  <input type="date" name="date" id="dateForm" required>
+                </div>
+                <div>
+                  <label for="court">Court</label>
+                  <select name="court" id="courtForm">
+                    <option value="1">court 1</option>
+                    <option value="2">court 2</option>
+                    <option value="3">court 3</option>
+                  </select>
+                </div>
+                <p>Time <select name="from" id="from" defaultValue="--">
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                  </select>
+                  <==>
+                    <select name="until" id="until">
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="13">13</option>
+                      <option value="14">14</option>
+                      <option value="15">15</option>
+                      <option value="16">16</option>
+                      <option value="17">17</option>
+                      <option value="18">18</option>
+                      <option value="19">19</option>
+                      <option value="20">20</option>
+                    </select>
+                </p>
+                <p>Total to pay: <span id="price">10 </span>€</p>
+                <div class="marginTop">
+                  <button class="roundedCornersAction">Book</button>
+                </div>
+              </form>
+              <p id="bookingFormResponse"></p>
+            </div>
+
+            <div class="sectionRightHalf" id="rentLinesContainer"></div>
+          </section>
+
         </div>
 
         <%- include('../includes/error.ejs') %>
       </main>
+  </body>
+  <script src="/scripts/home/selectDate.js"></script>
+  <script src="/scripts/home/rentLine.js"></script>
+  <script src="/scripts/home/handleBookingSubmit.js"></script>
+  <script src="/scripts/home/calculatePrice.js"></script>

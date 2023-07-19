@@ -1,5 +1,6 @@
 <%- include('../includes/head.ejs') %>
   <link rel="stylesheet" href="/css/account/account.css">
+  <link rel="stylesheet" href="/css/account/table.css">
 
   <body>
     <%- include('../includes/navbar.ejs') %>
@@ -22,7 +23,54 @@
               <a href="/auth/delete-account" class="accountAction" id="deleteAccount">Delete account</a>
             </div>
           </div>
+
+          <div>
+            <p class="centeredP">We save the rents for the past month and the future ones:</p>
+            <p id="notification" class="centeredP"></p>
+            <div id="tableContainer">
+              <table id="table">
+                <thead id="tableHead">
+                  <tr class="tableRow">
+                    <th>Date</th>
+                    <th>From</th>
+                    <th>Until</th>
+                    <th>Court</th>
+                    <th>Price</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% for(const booking of bookings) { %>
+                    <tr id="<%= booking.id %>" class="tableRow">
+                      <td>
+                        <%= booking.shortDate %>
+                      </td>
+                      <td>
+                        <%= booking.from %>:00
+                      </td>
+                      <td>
+                        <%= booking.until %>:00
+                      </td>
+                      <td>
+                        <%= booking.court %>
+                      </td>
+                      <td>
+                        <%= booking.price %> €
+                      </td>
+                      <td>
+                        <a class="deleteLink" id="<%= booking.id %>" date="<%= booking.completeDate %>"
+                          from="<%= booking.from %>" until="<%= booking.until %>" court="<%= booking.court %>"><img
+                            src="/assets/account/delete.svg" alt="delete booking"></a>
+                      </td>
+                    </tr>
+                    <% } %>
+                </tbody>
+              </table>
+
+            </div>
+          </div>
         </div>
         <%- include('../includes/error.ejs') %>
           <%- include('../includes/success.ejs') %>
       </main>
+      <script src="/scripts/account/deleteBooking.js"></script>

@@ -2,6 +2,7 @@ const bcrypt = require("bcryptjs")
 const { v4: uuid4 } = require("uuid")
 const { ObjectId } = require("mongodb")
 const User = require('../models/user')
+const Day = require('../models/day')
 const getFlashMessage = require("../utils/getErrorFlash")
 const sendResetPassMail = require("../utils/sendResetPassMail")
 const sendActivateAccountMail = require("../utils/sendActivateAccountMail")
@@ -194,12 +195,27 @@ exports.getActivateAccount = async (req, res, _) => {
 }
 
 exports.getAccountPage = (req, res, _) => {
+  const bookings = []
+  for (const booking of req.user.bookings) {
+    const dateParts = booking.date.toString().split(" ")
+    const newDateString = dateParts.slice(0, 4).join(" ")
+    bookings.push({
+      shortDate: newDateString,
+      completeDate: booking.date,
+      from: booking.from,
+      until: booking.until,
+      court: booking.court,
+      price: booking.price,
+      id: booking.id
+    })
+  }
   res.render("auth/account", {
     pageTitle: "Account page",
     errorMessage: getFlashMessage(req.flash(errorFlash)),
     successMessage: getFlashMessage(req.flash(successFlash)),
     username: req.session.user.name,
-    email: req.session.user.email
+    email: req.session.user.email,
+    bookings: bookings
   })
 }
 
@@ -245,6 +261,18 @@ exports.postEditAccount = async (req, res, _) => {
 
 exports.deleteAccount = async (req, res, _) => {
   try {
+    //* delete the booking from the day:
+    for (const booking of req.user.bookings) {
+      const day = await Day.findOne({ date: booking.date })
+      if (day) {
+        const promisses = []
+        for (let i = booking.from; i < booking.until; i++) {
+          promisses.push(day.courts[`court${booking.court}`].delete(`${i - 10}`))
+        }
+        await Promise.all(promisses)
+        await day.save()
+      }
+    }
     const promisses = [
       User.deleteOne({ _id: new ObjectId(req.session.user._id) }),
       store.client.db().collection(SESSIONS_COLLECTION).deleteMany(

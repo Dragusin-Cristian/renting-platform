@@ -103,3 +103,12 @@ button:hover{
 .success{
   color: green;
 }
+
+.marginTop{
+  margin-top: 20px;
+}
+
+.centeredP{
+  width: 100;
+  text-align: center;
+}

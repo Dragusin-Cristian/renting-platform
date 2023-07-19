@@ -9,14 +9,14 @@ div.formContainer h2 {
   width: 100%;
 }
 
-div.formContainer div.inputContainer {
+div.inputContainer {
   display: flex;
   flex-direction: column;
   text-align: left;
   margin-bottom: 30px;
 }
 
-div.formContainer div.inputContainer input {
+div.inputContainer input {
   border: 1px solid grey;
   border-radius: 10px;
   width: 100%;

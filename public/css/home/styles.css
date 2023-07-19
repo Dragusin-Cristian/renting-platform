@@ -1,4 +1,4 @@
-.sectionLeftHalf{
+#heroLeftHalf{
   text-align: left;
 }
 
@@ -23,7 +23,7 @@
 }
 
 @media(max-width: 1279px){
-  .sectionLeftHalf{
+  #heroLeftHalf{
     text-align: center;
     display: flex;
     align-items: center;
@@ -42,3 +42,4 @@
     margin-top: 10px;
   }
 }
+
