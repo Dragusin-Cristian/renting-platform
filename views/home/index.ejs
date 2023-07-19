@@ -10,68 +10,58 @@
     <%- include('../includes/navbar.ejs') %>
       <main>
         <div class="marginTopAfterNavBar">
-          <section>
-            <div id="heroLeftHalf">
-              <h1 class="heroHeading">Sports center booking platform</h1>
-              <p class="heroParagraph">Find, book, and excel at your favorite sports with our hassle-free sports center
-                renting platform. It’s
-                easy to use, forget about excuses and problems, focus on solutions and take action! </p>
-              <div class="buttonsContainer">
-                <a class="roundedCornersAction">Check our schedule</a>
-                <% if(!isAuthenticated) { %>
-                  <a href="/auth/login" class="roundedCornersAction loginAction marginLeft">Log in</a>
-                  <% } %>
+          <div id="homeContainer">
+            <section>
+              <div id="heroLeftHalf">
+                <h1 class="heroHeading">Sports center booking platform</h1>
+                <p class="heroParagraph">Find, book, and excel at your favorite sports with our hassle-free sports
+                  center
+                  renting platform. It’s
+                  easy to use, forget about excuses and problems, focus on solutions and take action! </p>
+                <div class="buttonsContainer">
+                  <a class="roundedCornersAction" href="#bookingSection">Check our schedule</a>
+                  <% if(!isAuthenticated) { %>
+                    <a href="/auth/login" class="roundedCornersAction loginAction marginLeft">Log in</a>
+                    <% } %>
+                </div>
               </div>
-            </div>
-            <div>
-              <%- include('./images.ejs') %>
-            </div>
-          </section>
-
-          <section id="bookingSection">
-            <div class="sectionLeftHalf">
-              <h2>Booking program</h2>
-              <div class="inputContainer">
-                <label for="date">On date</label>
-                <input type="date" name="date" id="dateProgram" required>
+              <div>
+                <%- include('./images.ejs') %>
               </div>
-              <p><span class="color" id="red"></span> UNAVAILABLE</p>
-              <p><span class="color" id="green"></span> AVAILABLE</p>
-              <p><span class="color" id="blue"></span> BOOKED BY YOU</p>
-            </div>
-            <div class="tallContainer"><%- include('./rentLines.ejs') %></div>
-          </section>
+            </section>
 
-          <section>
-            <div class="sectionLeftHalf">
-              <h2>Book a court</h2>
-              <form id="bookingForm">
+            <section id="bookingSection">
+              <div class="sectionLeftHalf">
+                <h2>Booking program</h2>
                 <div class="inputContainer">
                   <label for="date">On date</label>
-                  <input type="date" name="date" id="dateForm" required>
+                  <input type="date" name="date" id="dateProgram" required>
                 </div>
-                <div>
-                  <label for="court">Court</label>
-                  <select name="court" id="courtForm">
-                    <option value="1">court 1</option>
-                    <option value="2">court 2</option>
-                    <option value="3">court 3</option>
-                  </select>
-                </div>
-                <p>Time <select name="from" id="from" defaultValue="--">
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                    <option value="16">16</option>
-                    <option value="17">17</option>
-                    <option value="18">18</option>
-                    <option value="19">19</option>
-                  </select>
-                  <==>
-                    <select name="until" id="until">
+                <p><span class="color" id="red"></span> UNAVAILABLE</p>
+                <p><span class="color" id="green"></span> AVAILABLE</p>
+                <p><span class="color" id="blue"></span> BOOKED BY YOU</p>
+              </div>
+              <div class="tallContainer"><%- include('./rentLines.ejs') %></div>
+            </section>
+
+            <section>
+              <div class="sectionLeftHalf">
+                <h2>Book a court</h2>
+                <form id="bookingForm">
+                  <div class="inputContainer">
+                    <label for="date">On date</label>
+                    <input type="date" name="date" id="dateForm" required>
+                  </div>
+                  <div>
+                    <label for="court">Court</label>
+                    <select name="court" id="courtForm">
+                      <option value="1">court 1</option>
+                      <option value="2">court 2</option>
+                      <option value="3">court 3</option>
+                    </select>
+                  </div>
+                  <p>Time <select name="from" id="from" defaultValue="--">
+                      <option value="10">10</option>
                       <option value="11">11</option>
                       <option value="12">12</option>
                       <option value="13">13</option>
@@ -81,20 +71,73 @@
                       <option value="17">17</option>
                       <option value="18">18</option>
                       <option value="19">19</option>
-                      <option value="20">20</option>
                     </select>
-                </p>
-                <p>Total to pay: <span id="price">10 </span>€</p>
-                <div class="marginTop">
-                  <button class="roundedCornersAction">Book</button>
+                    <==>
+                      <select name="until" id="until">
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                      </select>
+                  </p>
+                  <p>Total to pay: <span id="price">10 </span>€</p>
+                  <div class="marginTop">
+                    <button class="roundedCornersAction">Book</button>
+                  </div>
+                </form>
+                <p id="bookingFormResponse"></p>
+              </div>
+
+              <div class="sectionRightHalf" id="rentLinesContainer"></div>
+            </section>
+
+            <section id="lastSection">
+              <div class="sectionLeftHalf">
+                <h2>Contact us</h2>
+                <div>
+                  <a href="mailto:dragusincristian609@gmail.com">
+                    <p>Email: dragusincristian609@gmail.com</p>
+                  </a>
+                  <a href="tel:+40773312648">
+                    <p>Tel: +40773312648</p>
+                  </a>
+                  <a href="https://maps.google.com/?q=44.472147,26.084531">
+                    <p>Somewhere in Bucharest</p>
+                  </a>
+                  <a href="">
+                    <p>Facebook: some FB address</p>
+                  </a>
+                  <a href="">
+                    <p>Instagram: some IG page</p>
+                  </a>
                 </div>
-              </form>
-              <p id="bookingFormResponse"></p>
-            </div>
 
-            <div class="sectionRightHalf" id="rentLinesContainer"></div>
-          </section>
-
+              </div>
+              <div class="sectionRightHalf">
+                <form action="" id="contactForm">
+                  <div class="inputContainer">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="nameContact" value="<%= name %>" required>
+                  </div>
+                  <div class="inputContainer">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="emailContact" value="<%= email %>" required>
+                  </div>
+                  <div class="inputContainer">
+                    <label for="message">Message</label>
+                    <textarea type="text" name="message" id="messageContact" required></textarea>
+                  </div>
+                  <button class="roundedCornersAction">Send</button>
+                </form>
+              </div>
+            </section>
+          </div>
         </div>
 
         <%- include('../includes/error.ejs') %>

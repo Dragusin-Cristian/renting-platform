@@ -1,6 +1,7 @@
 section#bookingSection {
   align-items: start;
   height: 300px;
+  padding-top: 50px;
 }
 
 .tallContainer{
@@ -9,6 +10,7 @@ section#bookingSection {
 
 .sectionLeftHalf{
   width: 371px;
+  margin: 0 20px;
 }
 
 .sectionRightHalf{
