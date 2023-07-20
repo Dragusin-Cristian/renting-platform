@@ -4,6 +4,7 @@ const express = require("express")
 const mongoose = require('mongoose');
 const session = require('express-session');
 const flash = require("connect-flash")
+const cors = require("cors")
 
 const errorCoontroller = require("./controllers/error")
 const authRoutes = require("./routes/auth")
@@ -13,6 +14,8 @@ const constants = require("./utils/constants")
 const store = require("./utils/MongoDbStore")
 
 const app = express()
+
+app.use(cors())
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
