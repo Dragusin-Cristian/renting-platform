@@ -4,7 +4,7 @@ const Day = require("../models/day")
 
 exports.getHome = (req, res, _) => {
   res.render("home/index.ejs", {
-    pageTitle: 'Sports center bookoing platform',
+    pageTitle: 'Sports center booking platform',
     name: req.session.user ? req.session.user.name : "",
     email: req.session.user ? req.session.user.email : "",
     errorMessage: getErrorFlash(req.flash("error"))
