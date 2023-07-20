@@ -41,7 +41,6 @@ const sendResetPassMail = async (email, uuid) => {
         console.log('Error sending email:', error);
         reject(error)
       } else {
-        console.log('Email sent successfully:', info);
         resolve(info)
       }
     });
