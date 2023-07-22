@@ -3,7 +3,7 @@ require('dotenv').config();
 //* if we have the port in env variables it means it is on the Google cloud
 if (process.env.PORT) {
   exports.PORT = process.env.PORT
-  exports.HOST = "https://renting-platform-392612.ew.r.appspot.com"
+  exports.HOST = "https://sports-booking-5423dbdf2cfa.herokuapp.com"
 } else {
   exports.PORT = 3000
   exports.HOST = "http://localhost:3000"
